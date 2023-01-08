@@ -1,0 +1,14 @@
+{
+    "name": "SMLIGHT.TECH",
+    "short_name": "SMLIGHT.TECH",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#F3483A",
+    "background_color": "#232629",
+    "display": "standalone"
+}
