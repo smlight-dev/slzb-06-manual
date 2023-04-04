@@ -14,7 +14,11 @@ If your SLZB-06 device has a LAN connection, you can update the ESP32 firmware r
 - select the firmware (*.bin file) and
 - Click ESP32 OTA Update.
 <img src="../../images/fw/systemtools-esp32-flash-rounded.png" title="SLZB-06 Firmware - System flash tools - ESP32 flashing" class="float-left" />
-4. Wait for the firmware to finish and reboot the device
+4. Wait for the firmware to finish and reboot the device.  
+
+## Updating ESP32 through the browser
+1. Connect your SLZB-06 to the PC.
+2. Follow his link [UPDATE FIRMWARE ONLINE](https://smlight.tech/manual/slzb-06/flasher/) and press "**Update firmware**" button at that page.  
 
 ## Updating ESP32 via USB
 If your SLZB-06 device is not connected to LAN or you want to flash ESP32 via USB for other reasons, it can be easily done via USB cable. For this purposes you need:
