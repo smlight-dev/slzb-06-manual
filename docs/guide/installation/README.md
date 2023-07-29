@@ -33,7 +33,11 @@ where
 1. Plug in type-C cable to the device.
 ::: tip
 SLZB-06 has optoelectronic isolation, so can be connected to USB port of your PC and at the same time to Ethernet/PoE cable!
-:::
+:::  
+
+::: warning
+Please use Type-A [Connection to the PC] to Type-C [connection to SLZB-06] cable only. Data transimmison will not work with Type-C to Type-C cables.
+:::  
 
 ::: warning
 **DRIVERS for USB/UART converter**! SLZB-06 uses CP2102 as an USB/UART chip. If your system does not recognize the device, you have to install the drivers. We reccomend to use the drivers from [official web page of Silicon Labs CP210x driver page](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads)!

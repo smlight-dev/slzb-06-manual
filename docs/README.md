@@ -11,7 +11,7 @@ actions:
     type: secondary
 features:
   - title: Universal
-    details: Works in both modes - Zigbee to Ethernet and Zigbee to USB adapter. Zigbee to WiFi is possible by SLZB-06, currently under development in firmware.
+    details: Works in THREE modes - Zigbee to Ethernet, Zigbee to WiFi (since fw version 0.9.9) and Zigbee to USB adapter.
   - title: PoE support
     details: Get rid of power cables and plugs! Power your device with PoE.
   - title: Ukrainian quality!
@@ -22,5 +22,5 @@ footer: slzb-06 manual is maintained by slzb-06 community.
 <hr>
 
 This is an official, online and always up-to-date manual of SLZB-06 Zigbee Ethernet USB PoE LAN Adapter.  
-Current stable version of Zigbee (CC2652P) Firmware is [20221226](https://github.com/Koenkk/Z-Stack-firmware/tree/master/coordinator/Z-Stack_3.x.0/bin).  
+Current stable version of Zigbee (CC2652P) Firmware is [20230519](https://github.com/Koenkk/Z-Stack-firmware/tree/master/coordinator/Z-Stack_3.x.0/bin).  
 Current stable version of Peripheral (ESP32) Firmware is [0.9.9](https://github.com/smlight-dev/slzb-06-firmware)

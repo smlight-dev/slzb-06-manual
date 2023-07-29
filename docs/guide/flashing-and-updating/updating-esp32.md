@@ -4,7 +4,19 @@ next: ../multiple-adapters-setup/
 ---
 
 # Updating ESP32
-## Updating ESP32 Over the Air (distantly)
+
+## Updating ESP32 through the browser
+::: tip
+Update to the version 1.0.0-dev could be done only by web-flasher. If you change firmware before 1.0.0-dev (e.g. from 0.9.8 to 0.9.9) or after 1.0.0-dev (e.g. from 1.0.0-dev to 1.0.1-dev) you can use update remotely over web-innterface. For 1.0.0-dev - only via web-flasher!
+:::  
+
+1. Connect your SLZB-06 to the PC.
+2. Follow his link [UPDATE FIRMWARE ONLINE](https://smlight.tech/manual/slzb-06/flasher/) and press "**Update firmware**" button at that page.  
+::: warning
+Please use Type-A [Connection to the PC] to Type-C [connection to SLZB-06] cable only. Flashing will not work with Type-C to Type-C cables.
+:::  
+
+## Updating ESP32 Over the Air (remotely)
 
 If your SLZB-06 device has a LAN connection, you can update the ESP32 firmware remotely via Over-the-Air (OTA) updates feature. To update the firmware via OTA, follow these steps:
 1. Download the latest firmware from [official SLZB-06 Firmware repository](https://github.com/smlight-dev/slzb-06-firmware/);
@@ -16,9 +28,7 @@ If your SLZB-06 device has a LAN connection, you can update the ESP32 firmware r
 <img src="../../images/fw/systemtools-esp32-flash-rounded.png" title="SLZB-06 Firmware - System flash tools - ESP32 flashing" class="float-left" />
 4. Wait for the firmware to finish and reboot the device.  
 
-## Updating ESP32 through the browser
-1. Connect your SLZB-06 to the PC.
-2. Follow his link [UPDATE FIRMWARE ONLINE](https://smlight.tech/manual/slzb-06/flasher/) and press "**Update firmware**" button at that page.  
+
 
 ## Updating ESP32 via USB
 If your SLZB-06 device is not connected to LAN or you want to flash ESP32 via USB for other reasons, it can be easily done via USB cable. For this purposes you need:

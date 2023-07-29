@@ -1,16 +1,16 @@
 import { navbar } from "./navbar";
 import { sidebar } from "./sidebar";
 import * as path from "path";
-import { DefinePlugin } from 'webpack';
+import { PageOptions } from "@vuepress/core";
+import defaultTheme from '@vuepress/theme-default';
+import webpackBundler from "@vuepress/bundler-webpack";
+import * as DefinePlugin from "webpack/lib/DefinePlugin.js";
+import { googleAnalyticsPlugin } from "@vuepress/plugin-google-analytics";
+import { sitemapPlugin } from 'vuepress-plugin-sitemap2';
+import { docsearchPlugin } from "@vuepress/plugin-docsearch";
+import { defineUserConfig } from "vuepress";
+import { domain, getBase, isDevelop } from "./getBase";
 
-export const domain = 'https://smlight.tech';
-const isDevelop = !!process.env.DEVELOP_BRANCH;
-
-export function getBase() {
-  let base = '/manual/slzb-06/';
-  if (isDevelop) base += 'develop/';
-  return base;
-}
 const pagePatterns = ['**/*.md', '!.vuepress', '!node_modules'];
 
 // Ability to exclude device-page rendering to save time while in dev
@@ -18,7 +18,10 @@ if (process.env.EXCLUDE_DEVICES) {
   pagePatterns.push('!devices');
 }
 
-const conf = {
+const devServerPort = (process.env.DEV_PORT ? parseInt(process.env.DEV_PORT, 10) : undefined);
+
+const conf = defineUserConfig({
+  port: devServerPort,
   base: getBase(),
   title: 'SLZB-06 Manual' + ( isDevelop ? ' develop' : '' ),
   description: 'SLZB-06 Zigbee Ethernet USB PoE LAN Universal Adapter',
@@ -27,6 +30,8 @@ const conf = {
   public: 'public',
   temp: '.temp',
   cache: '.cache',
+
+  shouldPrefetch: false,
 
   pagePatterns,
 
@@ -70,8 +75,9 @@ const conf = {
     }],
   ],
 
-  themeConfig: {
+  theme: defaultTheme({
     repo: 'smlight-dev/slzb-06-manual',
+    repoLabel: 'GitHub (docs)',
     docsBranch: isDevelop ? 'develop' : 'master',
     editLinkText: 'Help to make the manual better and edit this page on Github',
     logo: '/logo.png',
@@ -83,15 +89,20 @@ const conf = {
     themePlugins: {
       git: true
     }
-  },
+  }),
 
   debug: false,
 
-  bundler: '@vuepress/bundler-webpack',
-  bundlerConfig: {
+  bundler: webpackBundler({
+    scss: {
+      sassOptions: {
+        // ignore sass deprecation errors
+        quietDeps: true
+      }
+    },
     chainWebpack: (chain) => {
       chain.plugin('define-quasar')
-        .use(DefinePlugin, [{
+        .use(DefinePlugin.default, [{
           __QUASAR_VERSION__: `'dev'`,
           __QUASAR_SSR__: false,
           __QUASAR_SSR_SERVER__: false,
@@ -99,40 +110,37 @@ const conf = {
           __QUASAR_SSR_PWA__: false
         }]);
     },
-  },
+  }),
 
   plugins: [
-    [
-      '@vuepress/plugin-google-analytics',
-      {
-        id: 'G-CD3DJPTC5Z',
-      },
-    ],
-    [
-      'vuepress-plugin-sitemap2',
+    googleAnalyticsPlugin({
+      id: 'G-CD3DJPTC5Z',
+    }),
+    sitemapPlugin(
       { hostname: domain }
-    ],
-    [
-      '@vuepress/docsearch',
-      {
-        apiKey: 'XXXXXXXXXXXXXXXXXXXXXXXXXXX',
-        indexName: 'smlight.tech/manual/slzb-06',
-        appId: 'XXXXXXXXXXX',
-        locales: {
-          '/': {
-            placeholder: 'Search',
-          },
+    ),
+    docsearchPlugin({
+      apiKey: 'XXXXXXXXXXXXXX',
+      indexName: 'smlight.tech',
+      appId: 'XXXXXXXXXXXXXX',
+      locales: {
+        '/': {
+          placeholder: 'Search',
         },
       },
-    ],
-    [
-      path.resolve(__dirname, './docs/.vuepress/defaultPageClassPlugin.ts'),
-    ],
+    }),
+    {
+      name: 'extendsPageOptions',
+      extendsPageOptions: (pageOpts: PageOptions) => {
+        pageOpts.frontmatter = pageOpts.frontmatter ?? {}
+        const frontmatter = pageOpts.frontmatter;
+        // Add content-page css class
+        if (!frontmatter.pageClass) {
+          frontmatter.pageClass = 'content-page';
+        }
+      }
+    },
   ],
-}
-
-if(isDevelop) {
-  conf.head.push(['meta', { name: 'robots', content: 'noindex' }]);
-}
+});
 
 export default conf;
