@@ -9,7 +9,7 @@ The SLZB-06 adapter can be configured either via a physical button or via the we
 ## Configuring with Web-interface
 To configure the operation via the web interface, connect the device to your LAN network and enter the IP address of the device in the browser of your laptop or phone. 
 ::: tip
-SLZB-06 adapter supports mDNS. If you do not know the adapter's IP address - just go to the address 'slzb-06.local' in your browser (will work if your router supports mDNS)Package contains microUSB-typeC adapter.
+SLZB-06 adapter supports mDNS. If you do not know the adapter's IP address - just go to the address `slzb-06.local` in your browser (will work if your router supports mDNS)
 :::  
 
 Main parameters of the web interface:
