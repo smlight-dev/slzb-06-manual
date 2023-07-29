@@ -25,6 +25,19 @@ serial:
 where 
 - `192.168.0.105` is an IP address of SLZB-06 in your network;
 - `6638` is a port of your SLZB-06 adapter (default is **6638**, can be configured within Firmware);
+
+::: tip
+Zigbee2MQTT supports mDNS Zeroconf Autodiscovery for SLZB-06 adapter. If you do not know actual IP address of your SLZB-06, you can put `port: mdns://slzb-06` [please refer to official web page of Zigbee2MQTT mDNS settings here](https://www.zigbee2mqtt.io/guide/configuration/adapter-settings.html#mdns-zeroconf-discovery)!!
+:::  
+
+In case of mDNS Zeroconf autodiscovery, your Zigbee2MQTT serial's settings should looks like:
+```yaml
+...
+serial:
+  port: mdns://slzb-06
+...
+```
+
 4. Run Zigbee2MQTT.  
 
 

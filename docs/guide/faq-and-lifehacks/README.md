@@ -17,6 +17,19 @@ Have a look on other interesting topics at those web-resource, some of them are 
 - [Choosing a WiFi Channel](https://support.metageek.com/hc/en-us/articles/201034400-Choosing-a-WiFi-Channel);
 - [Why Channels 1, 6, and 11? (video)](https://support.metageek.com/hc/en-us/articles/216950047-Why-Channels-1-6-and-11-video-);
 
+### mDNS Audotdiscovery
+- if you do not know your SLZB-06 adapter's IP address, you can reach web-interface by following to `slzb-06.local` in your browser.
+- if you do not know your SLZB-06 adapter's IP address, you can set-up you [Zigbee2MQTT autodiscovery](https://www.zigbee2mqtt.io/guide/configuration/adapter-settings.html#mdns-zeroconf-discovery) by setting these parameters:
+```yaml
+...
+serial:
+  port: mdns://slzb-06
+...
+```
+
+### Type-A to Type-C cables support
+- In case of USB connection or flashing over USB - please use Type-A (your PC) to Type-C (SLZB-06) cables. Flashing and Zigbee bridge does not work with Type-C to Type-C cables.
+
 
 ## Common errors  
 ### Zigbee2MQTT: Error Network Commissioning Timeout (panID or extendedPanID already exists nearby)
