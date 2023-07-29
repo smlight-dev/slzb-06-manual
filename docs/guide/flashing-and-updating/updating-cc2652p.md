@@ -6,7 +6,7 @@ next: ../flashing-and-updating/updating-esp32/
 # Updating Zigbee CC2652P Chip
 User can flash Zigbee SoC (which is Texas Instruments CC2562P) any of the tools described at [Zigbee2MQTT official web page here:](https://www.zigbee2mqtt.io/guide/adapters/#flashing-cc1352-cc2652-cc2538-based-adapters).  
 There are several options for updates:
-- Update over web-interface (reccomended)
+- Update over web-interface (recommended)
 - Over-the-USB update
 - Manual Over-the-Air (Ethernet) update
 - Update with HW flasher
