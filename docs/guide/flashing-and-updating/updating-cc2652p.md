@@ -39,7 +39,7 @@ Process video manual could be checked here (stat at 01:00m) [Youtube SLZB-06 vid
 Texas Instruments is a manufacturer of Zigbee SoC CC2652P which is used in SLZB-06 adapter. The most "true" method is to use official flasher although it is more complicated process.
 :::
 
-1. Download latest Zigbee firmware. SLZB-06 Adapter is based on CC6252P from Texas Instruments. Firmwares are based on Z-Stack. You can see the best one here [Koenkk Z-Stack firmware on Github](https://github.com/Koenkk/Z-Stack-firmware/tree/master/coordinator/Z-Stack_3.x.0/bin). Use frmware with a tag **"...other_coordinator_"**;
+1. Download latest Zigbee firmware. SLZB-06 Adapter is based on CC2652P from Texas Instruments. Firmwares are based on Z-Stack. You can see the best one here [Koenkk Z-Stack firmware on Github](https://github.com/Koenkk/Z-Stack-firmware/tree/master/coordinator/Z-Stack_3.x.0/bin). Use frmware with a tag **"...other_coordinator_"**;
 2. Download official Texas Instruments [Flash Programmer 2](https://www.ti.com/tool/FLASH-PROGRAMMER);
 3. Install Flash Programmer 2;
 4. Connect your SLZB-06 to your network and USB port;
