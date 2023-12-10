@@ -4,12 +4,12 @@ next: ../bt-proxy/
 ---
 
 # Multiple adapters setup
-Sometimes the system architecture requires to manage several SLZB-06 Zigbee cordinators under the same instance of Home Assistant. Such cases include but not limited:
-- cover remote locations in you apartment, or different floor of basement etc;
-- cover remote building like garage etc via LAN connection;
-- cover remote location like summer house via Internet remote;
-- if you have "unstable" end-devices and want to segregate them from the main Zigbee network;
-- if you want to have a "guest" Zigbee network for testing and DIY works.
+Sometimes the system architecture requires to manage several SLZB-06 Zigbee cordinators under the same instance of Home Assistant. Such cases include but not limited to:
+- covering remote locations in an apartment, or a different floor, or a basement etc.;
+- covering remote buildings like a garage through a LAN connection;
+- covering remote locations like a summer house accessible remotely via an Internet connection;
+- separating "unstable" end-devices from the main Zigbee network;
+- having "guest" Zigbee networks for testing and DIY work.
 
 It is possible to connect any number of SLZB-06 coordinators to the same Home Assistant instance. 
 The coordinators can function simultaneously, regardless of whether they are:
