@@ -17,7 +17,7 @@ Main parameters of the web interface:
 <img src="../../images/fw/root.png" title="SLZB-06 Firmware - Home" class="img-fluid" />
 - **"General"**. Setting the device operation mode, LED operation mode, hostname and other general parameters.
 <img src="../../images/fw/general.png" title="SLZB-06 Firmware - General" class="img-fluid" />
-- **"Ethernet"** - Ezernet settings (DHCP, IP address, etc.)
+- **"Ethernet"** - Ethernet settings (DHCP, IP address, etc.)
 - **"Serial"**. Setting up access via Serial interface.
 - **"Security"**. Setting security parameters, such as login, disabling the web interface.
 - **"System and Tools**. General system features such as over-the-air updates, rebooting ESP32 and CC2652P.
